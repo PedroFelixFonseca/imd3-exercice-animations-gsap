@@ -1,40 +1,50 @@
-# exercices imd3 - animations GSAP
-
-## Prérequis
-
-- Git installé
-- NPM installé
+# Exercices Animations GSAP
 
 ## Installation
 
-Cloner le repository git
+1. Cloner le repository
+2. Ouvrir le dossier avec Visual Studio Code
+3. Ouvrir une fenêtre de terminal dans Visual Studio Code et entrer la commande suivante :
 
-```
-git@github.com:eikon-frontend/imd3-exercice-animations-gsap.git
-```
-
-Se rendre dans le dossier du projet, puis installer les dépendances avec NPM
-
-```
-cd imd3-exercice-animations-gsap
+```bash
 npm install
 ```
 
-## Commandes
+## Travail
 
-Compiler la SCSS, aggréger le JS, lancer le serveur et écouter les changements
+Depuis le terminal, entrer la commande suivante :
 
-```
+```bash
 npm run dev
 ```
 
-Compiler pour la production
+## Consigne
 
-```
-npm run build
+### Exercice 1
+
+La première série d'exercice se concentre sur les tweens GSAP (= simples animations). A chaque fois, la base théorique est rappelé en amont de l'exercice.
+
+Vous devez uniquement écrire du JavaScript dans le fichier dédié `animations.js`, **à l'exception de l'importation de la librairie GSAP qui doit être faite dans le fichier `main.js`**.
+
+### Exercice 2
+
+La seconde série d'exercice se concentre sur les Timelines, c'est-à-dire l'enchaînement et la synchronisation de multiples animations entre elles.
+
+Le code JavaScript doit être écrit dans le fichier dédié `timeline.js`.
+
+### Exercice 3
+
+La troisième série d'exercice se concentre sur les animations au scroll (ScrollTrigger).
+
+En plus d'écrire le code JavaScript dans le fichier dédié `scroll-trigger.js`, il vous faut également importer le plugin `ScrollTrigger` en dessous de la ligne d'import de la librairie.
+
+```js
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 ```
 
-## Installation de packages externes
+## Installation de la librairie GSAP
 
 ### [GSAP](https://greensock.com/gsap/)
 
@@ -44,7 +54,7 @@ Installer le paquet avec NPM
 npm install gsap
 ```
 
-Inclure le JS depuis un fichier JS
+Inclure le JS depuis un fichier JS (à indiquer tout en haut du fichier)
 
 ```js
 import gsap from "gsap";
