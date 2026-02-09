@@ -1,17 +1,18 @@
+import { gsap } from "gsap";
+    
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const animations = () => {
   if (document.querySelector("#exercice-animations")) {
-    /* ----------------------------------------------
-    Exercices JavaScript : animer avec
-    la bibliothèque GSAP
-   ----------------------------------------------
-    Installer GSAP
-   ---------------------------------------------- */
-    /* -----------------------
-    Exercice 1
-   -----------------------
-    Déplacer l'item 1 de 100px vers la gauche
-    durant 3 secondes
-   ----------------------- */
+
+    gsap.to("#js-exercise-1", { 
+      x: 100,
+      duration: 3 
+    });
+
+
     /* -----------------------
     Exercice 2
    -----------------------
