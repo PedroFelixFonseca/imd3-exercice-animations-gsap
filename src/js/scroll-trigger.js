@@ -1,3 +1,9 @@
+import { gsap } from "gsap";
+    
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const scrollTriggerFunc = () => {
   if (document.querySelector("#exercice-scroll-trigger")) {
     /* ----------------------------------------------
@@ -20,6 +26,33 @@ const scrollTriggerFunc = () => {
     [3] est en haut de l'écran (son bord haut atteint
     le bord haut du viewport)
    ----------------------- */
+      gsap.to(".box-1", {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ".box-1",
+          start: "bottom bottom",
+          end: "top top",
+          scrub: true
+        }   
+      });
+      gsap.to(".box-2", {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ".box-2",
+          start: "center center",
+          end: "center center",
+          scrub: true
+        }
+      });
+      gsap.to(".box-3", {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ".box-3",
+          start: "top top",
+          end: "top top",
+          scrub: true
+        }
+      });
     /* -----------------------
     Exercice 2
    -----------------------
@@ -28,6 +61,15 @@ const scrollTriggerFunc = () => {
     [4] atteint 60% de l'écran (son bord haut
     atteint 60% du viewport)
    ----------------------- */
+      gsap.to(".box-4", {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ".box-4",
+          start: "top 60%",
+          end: "top 60%",
+          scrub: true
+        }
+      });
     /* -----------------------
     Exercice 3
    -----------------------
@@ -36,6 +78,24 @@ const scrollTriggerFunc = () => {
     [5] et [6] apparaissent sur l'écran (leur bord haut
     atteint le bord bas du viewport)
    ----------------------- */
+      gsap.to(".box-5", {
+        y: -100,
+        scrollTrigger: {
+          trigger: ".box-5",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true
+        }
+      });
+      gsap.to(".box-6", {
+        y: -50,
+        scrollTrigger: {
+          trigger: ".box-6",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true
+        }
+      });
     /* -----------------------
     Exercice 4
    -----------------------
@@ -47,6 +107,15 @@ const scrollTriggerFunc = () => {
     puis, conclure l'animation lorsque :
     300px ont été scrollés depuis le début de l'animation
    ----------------------- */
+      gsap.to(".box-7", {
+        rotation: 360,
+        scrollTrigger: {
+          trigger: ".box-7",
+          start: "top 40%",
+          end: "+=300",
+          scrub: true
+        }
+      });
     /* -----------------------
     🔥 Exercice 5 🔥
    -----------------------
@@ -62,6 +131,26 @@ const scrollTriggerFunc = () => {
     [8] et [9] sont en haut de l'écran (leur bord haut
     atteint le bord haut du viewport)
    ----------------------- */
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".box-8",
+        start: "bottom bottom",
+        end: "top top",
+        scrub: true
+      }
+    });
+
+    timeline.to(".box-8", {
+      x: -100,
+      duration: 1
+    })
+    .to(".box-9", {
+      x: 100,
+      duration: 1
+    },)
+    .to([".box-9", ".box-10"], {
+      opacity: 1,
+    }, "-=0.5");
     /* -----------------------
     Exercice 6
    -----------------------
@@ -70,6 +159,13 @@ const scrollTriggerFunc = () => {
     [10] est au milieu de l'écran (son milieu atteint
     le milieu du viewport)
    ----------------------- */
+      ScrollTrigger.create({
+        trigger: ".box-10",
+        start: "center center",
+        end: "center center",
+        onEnter: () => document.querySelector(".box-10").classList.add("highlight"),
+        onLeaveBack: () => document.querySelector(".box-10").classList.remove("highlight"),
+      });
     /* -----------------------
     🔥🔥 Exercice 7 🔥🔥
    -----------------------
@@ -85,6 +181,13 @@ const scrollTriggerFunc = () => {
     Cet exercice n'a pas besoin d'animation to/from/fromTo, et peut
     utiliser la version standalone de ScrollTrigger
    ----------------------- */
+      ScrollTrigger.create({
+        trigger: ".box-11",
+        pin: ".box-11",
+        start: "center center",
+        end: "bottom-=20% center",
+        markers: true,
+      });
   }
 };
 

@@ -41,15 +41,15 @@ const timelineExercices = () => {
    ----------------------- */
     const timeline2 = gsap.timeline();
 
-    timeline2.to("#js-timeline-2", {
+    timeline2.to(".box-2", {
       scale: 1.5,
       duration: 1
     })
-    .to("#js-timeline-2", {
+    .to(".box-2", {
       backgroundColor: "red",
       duration: 0.5
     }, "-=0.3")
-    .to("#js-timeline-2", {
+    .to(".box-2", {
       scale: 1,
       backgroundColor: "initial",
       duration: 0.8
