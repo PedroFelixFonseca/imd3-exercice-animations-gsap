@@ -182,7 +182,7 @@ const scrollTriggerFunc = () => {
     utiliser la version standalone de ScrollTrigger
    ----------------------- */
       ScrollTrigger.create({
-        trigger: ".box-11",
+        trigger: "#js-exercise-7",
         pin: ".box-11",
         start: "center center",
         end: "bottom-=20% center",

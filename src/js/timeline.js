@@ -51,7 +51,7 @@ const timelineExercices = () => {
     }, "-=0.3")
     .to(".box-2", {
       scale: 1,
-      backgroundColor: "initial",
+      backgroundColor: "white",
       duration: 0.8
     },);
     /* -----------------------
