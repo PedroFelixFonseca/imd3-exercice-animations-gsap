@@ -1,3 +1,9 @@
+import { gsap } from "gsap";
+    
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const timelineExercices = () => {
   if (document.querySelector("#exercice-timeline")) {
     /* -----------------------
