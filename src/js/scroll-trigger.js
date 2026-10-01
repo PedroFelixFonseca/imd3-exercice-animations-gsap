@@ -1,14 +1,8 @@
 import { gsap } from "gsap";
-<<<<<<< HEAD
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
-=======
-    
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
->>>>>>> 02b829d09561662f22c486ab8115c35ed4afb585
 const scrollTriggerFunc = () => {
   if (document.querySelector("#exercice-scroll-trigger")) {
     /* ----------------------------------------------
@@ -17,7 +11,7 @@ const scrollTriggerFunc = () => {
    ----------------------------------------------
     Importer GSAP et ScrollTrigger en haut du fichier.
     Attention: n'oubliez pas d'enregistrer (register) ScrollTrigger à GSAP.
-    
+
     Utiliser les 'markers' pour visualiser les points
     de contact.
    ---------------------------------------------- */
@@ -33,63 +27,33 @@ const scrollTriggerFunc = () => {
     [3] est en haut de l'écran (son bord haut atteint
     le bord haut du viewport)
    ----------------------- */
-<<<<<<< HEAD
-   gsap.to(".box-1", {
-    scrollTrigger: {
-      trigger: ".box-1",
-      start: "top bottom",
-      end: "bottom bottom",
-    
-    },
-    opacity: 1
-  });
-  gsap.to(".box-2", {
-    scrollTrigger: {
-      trigger: ".box-2",
-      start: "top center",
-      end: "bottom center",
-    
-    },
-    opacity: 1    
-  });
-  gsap.to(".box-3", {
-    scrollTrigger: {
-      trigger: ".box-3",
-      start: "top top",
-      end: "bottom top",
-    },
-    opacity: 1    
-  });
-         
-=======
-      gsap.to(".box-1", {
-        opacity: 1,
-        scrollTrigger: {
-          trigger: ".box-1",
-          start: "bottom bottom",
-          end: "top top",
-          scrub: true
-        }   
-      });
-      gsap.to(".box-2", {
-        opacity: 1,
-        scrollTrigger: {
-          trigger: ".box-2",
-          start: "center center",
-          end: "center center",
-          scrub: true
-        }
-      });
-      gsap.to(".box-3", {
-        opacity: 1,
-        scrollTrigger: {
-          trigger: ".box-3",
-          start: "top top",
-          end: "top top",
-          scrub: true
-        }
-      });
->>>>>>> 02b829d09561662f22c486ab8115c35ed4afb585
+    gsap.to(".box-1", {
+      scrollTrigger: {
+        trigger: ".box-1",
+        start: "top bottom",
+        end: "bottom bottom",
+      },
+      opacity: 1,
+    });
+
+    gsap.to(".box-2", {
+      scrollTrigger: {
+        trigger: ".box-2",
+        start: "top center",
+        end: "bottom center",
+      },
+      opacity: 1,
+    });
+
+    gsap.to(".box-3", {
+      scrollTrigger: {
+        trigger: ".box-3",
+        start: "top top",
+        end: "bottom top",
+      },
+      opacity: 1,
+    });
+
     /* -----------------------
     Exercice 2
    -----------------------
@@ -98,26 +62,15 @@ const scrollTriggerFunc = () => {
     [4] atteint 60% de l'écran (son bord haut
     atteint 60% du viewport)
    ----------------------- */
-<<<<<<< HEAD
-   gsap.to(".box-4", {
-    scrollTrigger: {
-      trigger: ".box-4",
-      start: "top 60%",
-      end: "bottom 60%",
-    },
-    opacity: 1    
-  });   
-=======
-      gsap.to(".box-4", {
-        opacity: 1,
-        scrollTrigger: {
-          trigger: ".box-4",
-          start: "top 60%",
-          end: "top 60%",
-          scrub: true
-        }
-      });
->>>>>>> 02b829d09561662f22c486ab8115c35ed4afb585
+    gsap.to(".box-4", {
+      scrollTrigger: {
+        trigger: ".box-4",
+        start: "top 60%",
+        end: "bottom 60%",
+      },
+      opacity: 1,
+    });
+
     /* -----------------------
     Exercice 3
    -----------------------
@@ -125,49 +78,30 @@ const scrollTriggerFunc = () => {
     les boîtes [5] et [6] lorsque :
     [5] et [6] apparaissent sur l'écran (leur bord haut
     atteint le bord bas du viewport)
-    
+
     Note: un effet parallax signifie que les boîtes se déplacent
     à des vitesses différentes
    ----------------------- */
-<<<<<<< HEAD
-   gsap.to(".box-5", {
-    scrollTrigger: {
-      trigger: ".box-5",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: true,
-    },
-    y: 150
-  });
-  gsap.to(".box-6", {
-    scrollTrigger: {
-      trigger: ".box-6",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: true,
-    },
-    y: -450
-  });  
-=======
-      gsap.to(".box-5", {
-        y: -100,
-        scrollTrigger: {
-          trigger: ".box-5",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true
-        }
-      });
-      gsap.to(".box-6", {
-        y: -50,
-        scrollTrigger: {
-          trigger: ".box-6",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true
-        }
-      });
->>>>>>> 02b829d09561662f22c486ab8115c35ed4afb585
+    gsap.to(".box-5", {
+      scrollTrigger: {
+        trigger: ".box-5",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+      },
+      y: 150,
+    });
+
+    gsap.to(".box-6", {
+      scrollTrigger: {
+        trigger: ".box-6",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+      },
+      y: -450,
+    });
+
     /* -----------------------
     Exercice 4
    -----------------------
@@ -175,32 +109,21 @@ const scrollTriggerFunc = () => {
     en employant la propriété 'scrubs', lorsque :
     [7] atteint 40% de l'écran (son bord haut
     atteint 40% du viewport)
-    
+
     puis, conclure l'animation lorsque :
     300px ont été scrollés depuis le début de l'animation
    ----------------------- */
-<<<<<<< HEAD
     gsap.to(".box-7", {
-    scrollTrigger: {
-      trigger: ".box-7",
-      start: "top 40%",
-      end: "+=300",
-      scrub: true,
-    },
-    rotation: 360,
-    opacity: 1
-  }); 
-=======
-      gsap.to(".box-7", {
-        rotation: 360,
-        scrollTrigger: {
-          trigger: ".box-7",
-          start: "top 40%",
-          end: "+=300",
-          scrub: true
-        }
-      });
->>>>>>> 02b829d09561662f22c486ab8115c35ed4afb585
+      scrollTrigger: {
+        trigger: ".box-7",
+        start: "top 40%",
+        end: "+=300",
+        scrub: true,
+      },
+      rotation: 360,
+      opacity: 1,
+    });
+
     /* -----------------------
     🔥 Exercice 5 🔥
    -----------------------
@@ -211,45 +134,24 @@ const scrollTriggerFunc = () => {
     lorsque :
     [8] et [9] apparaissent complètement sur l'écran
     (leur bord bas atteint le bord bas du viewport)
-    
+
     puis, conclure l'animation lorsque :
     [8] et [9] sont en haut de l'écran (leur bord haut
     atteint le bord haut du viewport)
    ----------------------- */
-<<<<<<< HEAD
-   gsap.timeline({
-    scrollTrigger: {
-      trigger: ".box-8",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: true,
-    }
-  })
-  .to(".box-8", { x: -100 })
-  .to(".box-9", { x: 100 })
-  .to([".box-9", ".box-10"], { opacity: 1 }, "<"); 
-=======
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".box-8",
-        start: "bottom bottom",
-        end: "top top",
-        scrub: true
-      }
-    });
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: ".box-8",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      })
+      .to(".box-8", { x: -100 })
+      .to(".box-9", { x: 100 })
+      .to([".box-9", ".box-10"], { opacity: 1 }, "<");
 
-    timeline.to(".box-8", {
-      x: -100,
-      duration: 1
-    })
-    .to(".box-9", {
-      x: 100,
-      duration: 1
-    },)
-    .to([".box-9", ".box-10"], {
-      opacity: 1,
-    }, "-=0.5");
->>>>>>> 02b829d09561662f22c486ab8115c35ed4afb585
     /* -----------------------
     Exercice 6
    -----------------------
@@ -258,24 +160,15 @@ const scrollTriggerFunc = () => {
     [10] est au milieu de l'écran (son milieu atteint
     le milieu du viewport)
    ----------------------- */
-<<<<<<< HEAD
-  gsap.to(".box-10", {
-    scrollTrigger: {
-      trigger: ".box-10",
-      start: "top center",
-      end: "bottom center",
-      toggleClass: "highlight"
-    }
-  });
-=======
-      ScrollTrigger.create({
+    gsap.to(".box-10", {
+      scrollTrigger: {
         trigger: ".box-10",
-        start: "center center",
-        end: "center center",
-        onEnter: () => document.querySelector(".box-10").classList.add("highlight"),
-        onLeaveBack: () => document.querySelector(".box-10").classList.remove("highlight"),
-      });
->>>>>>> 02b829d09561662f22c486ab8115c35ed4afb585
+        start: "top center",
+        end: "bottom center",
+        toggleClass: "highlight",
+      },
+    });
+
     /* -----------------------
     🔥🔥 Exercice 7 🔥🔥
    -----------------------
@@ -283,31 +176,21 @@ const scrollTriggerFunc = () => {
     en employant la propriété 'pin', lorsque :
     le parent de [11] est au milieu de l'écran (son milieu atteint
     le milieu du viewport)
-    
+
     puis, "libérer" la boîte lorsque :
     le bas du conteneur de [11] est au milieu de l'écran -20%
     (son bord bas -20% atteint le centre du viewport)
-    
+
     Cet exercice n'a pas besoin d'animation to/from/fromTo, et peut
     utiliser la version standalone de ScrollTrigger
    ----------------------- */
-<<<<<<< HEAD
     ScrollTrigger.create({
       trigger: "#js-exercise-7",
       start: "center center",
       end: "bottom-=20% center",
       pin: ".box-11",
       markers: true,
-    }); 
-=======
-      ScrollTrigger.create({
-        trigger: "#js-exercise-7",
-        pin: ".box-11",
-        start: "center center",
-        end: "bottom-=20% center",
-        markers: true,
-      });
->>>>>>> 02b829d09561662f22c486ab8115c35ed4afb585
+    });
   }
 };
 
