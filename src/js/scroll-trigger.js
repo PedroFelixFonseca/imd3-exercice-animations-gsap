@@ -1,3 +1,6 @@
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 const scrollTriggerFunc = () => {
   if (document.querySelector("#exercice-scroll-trigger")) {
     /* ----------------------------------------------
@@ -22,6 +25,33 @@ const scrollTriggerFunc = () => {
     [3] est en haut de l'écran (son bord haut atteint
     le bord haut du viewport)
    ----------------------- */
+   gsap.to(".box-1", {
+    scrollTrigger: {
+      trigger: ".box-1",
+      start: "top bottom",
+      end: "bottom bottom",
+    
+    },
+    opacity: 1
+  });
+  gsap.to(".box-2", {
+    scrollTrigger: {
+      trigger: ".box-2",
+      start: "top center",
+      end: "bottom center",
+    
+    },
+    opacity: 1    
+  });
+  gsap.to(".box-3", {
+    scrollTrigger: {
+      trigger: ".box-3",
+      start: "top top",
+      end: "bottom top",
+    },
+    opacity: 1    
+  });
+         
     /* -----------------------
     Exercice 2
    -----------------------
@@ -30,6 +60,14 @@ const scrollTriggerFunc = () => {
     [4] atteint 60% de l'écran (son bord haut
     atteint 60% du viewport)
    ----------------------- */
+   gsap.to(".box-4", {
+    scrollTrigger: {
+      trigger: ".box-4",
+      start: "top 60%",
+      end: "bottom 60%",
+    },
+    opacity: 1    
+  });   
     /* -----------------------
     Exercice 3
    -----------------------
@@ -41,6 +79,24 @@ const scrollTriggerFunc = () => {
     Note: un effet parallax signifie que les boîtes se déplacent
     à des vitesses différentes
    ----------------------- */
+   gsap.to(".box-5", {
+    scrollTrigger: {
+      trigger: ".box-5",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+    y: 150
+  });
+  gsap.to(".box-6", {
+    scrollTrigger: {
+      trigger: ".box-6",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+    y: -450
+  });  
     /* -----------------------
     Exercice 4
    -----------------------
@@ -52,6 +108,16 @@ const scrollTriggerFunc = () => {
     puis, conclure l'animation lorsque :
     300px ont été scrollés depuis le début de l'animation
    ----------------------- */
+    gsap.to(".box-7", {
+    scrollTrigger: {
+      trigger: ".box-7",
+      start: "top 40%",
+      end: "+=300",
+      scrub: true,
+    },
+    rotation: 360,
+    opacity: 1
+  }); 
     /* -----------------------
     🔥 Exercice 5 🔥
    -----------------------
@@ -67,6 +133,17 @@ const scrollTriggerFunc = () => {
     [8] et [9] sont en haut de l'écran (leur bord haut
     atteint le bord haut du viewport)
    ----------------------- */
+   gsap.timeline({
+    scrollTrigger: {
+      trigger: ".box-8",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    }
+  })
+  .to(".box-8", { x: -100 })
+  .to(".box-9", { x: 100 })
+  .to([".box-9", ".box-10"], { opacity: 1 }, "<"); 
     /* -----------------------
     Exercice 6
    -----------------------
@@ -75,6 +152,14 @@ const scrollTriggerFunc = () => {
     [10] est au milieu de l'écran (son milieu atteint
     le milieu du viewport)
    ----------------------- */
+  gsap.to(".box-10", {
+    scrollTrigger: {
+      trigger: ".box-10",
+      start: "top center",
+      end: "bottom center",
+      toggleClass: "highlight"
+    }
+  });
     /* -----------------------
     🔥🔥 Exercice 7 🔥🔥
    -----------------------
@@ -90,6 +175,13 @@ const scrollTriggerFunc = () => {
     Cet exercice n'a pas besoin d'animation to/from/fromTo, et peut
     utiliser la version standalone de ScrollTrigger
    ----------------------- */
+    ScrollTrigger.create({
+      trigger: "#js-exercise-7",
+      start: "center center",
+      end: "bottom-=20% center",
+      pin: ".box-11",
+      markers: true,
+    }); 
   }
 };
 
