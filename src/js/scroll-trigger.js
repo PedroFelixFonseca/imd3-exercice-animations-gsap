@@ -1,6 +1,14 @@
 import { gsap } from "gsap";
+<<<<<<< HEAD
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+=======
+    
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+>>>>>>> 02b829d09561662f22c486ab8115c35ed4afb585
 const scrollTriggerFunc = () => {
   if (document.querySelector("#exercice-scroll-trigger")) {
     /* ----------------------------------------------
@@ -25,6 +33,7 @@ const scrollTriggerFunc = () => {
     [3] est en haut de l'écran (son bord haut atteint
     le bord haut du viewport)
    ----------------------- */
+<<<<<<< HEAD
    gsap.to(".box-1", {
     scrollTrigger: {
       trigger: ".box-1",
@@ -52,6 +61,35 @@ const scrollTriggerFunc = () => {
     opacity: 1    
   });
          
+=======
+      gsap.to(".box-1", {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ".box-1",
+          start: "bottom bottom",
+          end: "top top",
+          scrub: true
+        }   
+      });
+      gsap.to(".box-2", {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ".box-2",
+          start: "center center",
+          end: "center center",
+          scrub: true
+        }
+      });
+      gsap.to(".box-3", {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ".box-3",
+          start: "top top",
+          end: "top top",
+          scrub: true
+        }
+      });
+>>>>>>> 02b829d09561662f22c486ab8115c35ed4afb585
     /* -----------------------
     Exercice 2
    -----------------------
@@ -60,6 +98,7 @@ const scrollTriggerFunc = () => {
     [4] atteint 60% de l'écran (son bord haut
     atteint 60% du viewport)
    ----------------------- */
+<<<<<<< HEAD
    gsap.to(".box-4", {
     scrollTrigger: {
       trigger: ".box-4",
@@ -68,6 +107,17 @@ const scrollTriggerFunc = () => {
     },
     opacity: 1    
   });   
+=======
+      gsap.to(".box-4", {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ".box-4",
+          start: "top 60%",
+          end: "top 60%",
+          scrub: true
+        }
+      });
+>>>>>>> 02b829d09561662f22c486ab8115c35ed4afb585
     /* -----------------------
     Exercice 3
    -----------------------
@@ -79,6 +129,7 @@ const scrollTriggerFunc = () => {
     Note: un effet parallax signifie que les boîtes se déplacent
     à des vitesses différentes
    ----------------------- */
+<<<<<<< HEAD
    gsap.to(".box-5", {
     scrollTrigger: {
       trigger: ".box-5",
@@ -97,6 +148,26 @@ const scrollTriggerFunc = () => {
     },
     y: -450
   });  
+=======
+      gsap.to(".box-5", {
+        y: -100,
+        scrollTrigger: {
+          trigger: ".box-5",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true
+        }
+      });
+      gsap.to(".box-6", {
+        y: -50,
+        scrollTrigger: {
+          trigger: ".box-6",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true
+        }
+      });
+>>>>>>> 02b829d09561662f22c486ab8115c35ed4afb585
     /* -----------------------
     Exercice 4
    -----------------------
@@ -108,6 +179,7 @@ const scrollTriggerFunc = () => {
     puis, conclure l'animation lorsque :
     300px ont été scrollés depuis le début de l'animation
    ----------------------- */
+<<<<<<< HEAD
     gsap.to(".box-7", {
     scrollTrigger: {
       trigger: ".box-7",
@@ -118,6 +190,17 @@ const scrollTriggerFunc = () => {
     rotation: 360,
     opacity: 1
   }); 
+=======
+      gsap.to(".box-7", {
+        rotation: 360,
+        scrollTrigger: {
+          trigger: ".box-7",
+          start: "top 40%",
+          end: "+=300",
+          scrub: true
+        }
+      });
+>>>>>>> 02b829d09561662f22c486ab8115c35ed4afb585
     /* -----------------------
     🔥 Exercice 5 🔥
    -----------------------
@@ -133,6 +216,7 @@ const scrollTriggerFunc = () => {
     [8] et [9] sont en haut de l'écran (leur bord haut
     atteint le bord haut du viewport)
    ----------------------- */
+<<<<<<< HEAD
    gsap.timeline({
     scrollTrigger: {
       trigger: ".box-8",
@@ -144,6 +228,28 @@ const scrollTriggerFunc = () => {
   .to(".box-8", { x: -100 })
   .to(".box-9", { x: 100 })
   .to([".box-9", ".box-10"], { opacity: 1 }, "<"); 
+=======
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".box-8",
+        start: "bottom bottom",
+        end: "top top",
+        scrub: true
+      }
+    });
+
+    timeline.to(".box-8", {
+      x: -100,
+      duration: 1
+    })
+    .to(".box-9", {
+      x: 100,
+      duration: 1
+    },)
+    .to([".box-9", ".box-10"], {
+      opacity: 1,
+    }, "-=0.5");
+>>>>>>> 02b829d09561662f22c486ab8115c35ed4afb585
     /* -----------------------
     Exercice 6
    -----------------------
@@ -152,6 +258,7 @@ const scrollTriggerFunc = () => {
     [10] est au milieu de l'écran (son milieu atteint
     le milieu du viewport)
    ----------------------- */
+<<<<<<< HEAD
   gsap.to(".box-10", {
     scrollTrigger: {
       trigger: ".box-10",
@@ -160,6 +267,15 @@ const scrollTriggerFunc = () => {
       toggleClass: "highlight"
     }
   });
+=======
+      ScrollTrigger.create({
+        trigger: ".box-10",
+        start: "center center",
+        end: "center center",
+        onEnter: () => document.querySelector(".box-10").classList.add("highlight"),
+        onLeaveBack: () => document.querySelector(".box-10").classList.remove("highlight"),
+      });
+>>>>>>> 02b829d09561662f22c486ab8115c35ed4afb585
     /* -----------------------
     🔥🔥 Exercice 7 🔥🔥
    -----------------------
@@ -175,6 +291,7 @@ const scrollTriggerFunc = () => {
     Cet exercice n'a pas besoin d'animation to/from/fromTo, et peut
     utiliser la version standalone de ScrollTrigger
    ----------------------- */
+<<<<<<< HEAD
     ScrollTrigger.create({
       trigger: "#js-exercise-7",
       start: "center center",
@@ -182,6 +299,15 @@ const scrollTriggerFunc = () => {
       pin: ".box-11",
       markers: true,
     }); 
+=======
+      ScrollTrigger.create({
+        trigger: "#js-exercise-7",
+        pin: ".box-11",
+        start: "center center",
+        end: "bottom-=20% center",
+        markers: true,
+      });
+>>>>>>> 02b829d09561662f22c486ab8115c35ed4afb585
   }
 };
 
